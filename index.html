@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Berrylicious Bakery</title>
+  </head>
+
+  <body>
+    <!-- Erstellen der 3 Menü-Striche -->
+    <input type="checkbox" class="nav_checkbox" />
+    <nav>
+      <div class="menu">
+        <div class="menu icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- Bereich der ausgeklappt wird -->
+        <div class="nav_toggle">
+          <h2 class="bb-logo">
+            <img src="images/BB_Logo.png" class="logo-image" />
+            <span class="logo-text">Berrylicious Bakery</span>
+          </h2>
+
+          <div class="search-bar">
+            <!-- i um Lupen-Icon einzubinden -->
+            <i class="search-icon"></i>
+            <input type="search" placeholder="Suche ..." />
+          </div>
+
+          <!-- Drop-Down-Menu mit internen Links zu den verschiedenen Stages -->
+          <ul class="drop-down-nav">
+            <li>
+              <a href="#"><img src="images/expand-more.svg" class="pfeil_runter">Schritte</a>
+              <ul>
+                <li><a href="#stage1-start">Einleitung</a></li>
+                <li><a href="#stage2-start">Zutaten</a></li>
+                <li><a href="#stage3-start">Vorbereitung</a></li>
+                <li><a href="#stage4-start">Schritt 1</a></li>
+                <li><a href="#stage5-start">Schritt 2</a></li>
+                <li><a href="#stage6-start">Schritt 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- -------------------------- main --------------------------------- -->
+    <main class="parallax">
+      <div class="stage1" id="stage1-start">
+        <h1 class="bb-title">
+          <img src="images/BB_Logo.png" class="start-logo" />
+          <span class="logo-text">Berrylicious Bakery</span>
+        </h1>
+        <div class="einleitung">
+          <h3 class="rezept-titel">Strawberrylicious Erdbeer-Sahne-Torte</h3>
+          <div class="center">
+          <img
+            src="images/kuchen.jpg"
+            alt="Erdbeerkuchen"
+            class="cake-start"
+          />
+          </div>
+          <img src="images_updated/Erdbeere/01.png" alt="Erdbeere" class="erdbeere">
+          <p class="einleitungs-text">
+            Hallo Freunde, die Erdbeeren mögen. <br>
+            Heute zeige ich euch das beste Rezept für einen Kuchen <br>
+            mit vielen Erdbeeren und Sahne. <br>
+            Sind alle bereit? Los geht's mit dem Rezept!
+          </p>
+        </div>
+      </div>
+
+      <div class="puffer"></div>
+
+       <div class="stage2 zutaten" id="stage2-start">
+        <!-- container um Inhalt zu umschließen -->
+        <div class="container">
+          <h1 class="title">Diese Sachen brauchst du:</h1>
+          <!-- um linke & rechte Box nebeneinander darzustellen -->
+          <div class="box-container">
+            <!-- Linke Box mit Zutatenliste -->
+            <div class="box left-box">
+              <h2>Zutaten</h2>
+              <ul>
+                <li>3 Eier</li>
+                <li>170 g Zucker</li>
+                <li>1 Prise Salz</li>
+                <li>100 g Mehl</li>
+                <li>1 TL Backpulver</li>
+                <li>500 g Magerquark</li>
+                <li>200 g Sahne</li>
+                <li>2 Pck. Sahnesteif</li>
+                <li>400 g Erdbeeren</li>
+                <li>2 EL gehackte Pistazien (optional)</li>
+              </ul>
+            </div>
+             <!-- Einbindung der einzelnen Zutaten Icons -->
+            <div class="image-box">
+              <img src="images_updated/Schritt 1/Mehl.png" class="mehlbild">
+              <img src="images_updated/Schritt 1/Eier.png" class="eibild">
+              <img src="images_updated/Schritt 1/Zucker.png" class="zuckerbild">
+              <img src="images_updated/Schritt 1/Salz.png" class="salzbild">
+              <img src="images_updated/Hintergrund/Quark.png" class="quarkbild">
+              <img src="images_updated/Hintergrund/Sahne.png" class="sahnebild">
+              <img src="images_updated/Hintergrund/Erdbeeren.png" class="erdbeerenbild left">
+              <img src="images_updated/Hintergrund/Erdbeeren.png" class="erdbeerenbild right">
+            </div>
+            <!-- Einbindung der einzelnen Utensilien Icons -->
+            <div class="utensilien-image">
+              <img src="images_updated/Schritt 1/Kuchenform.png" class="springformbild">
+              <img src="images_updated/Schritt 1/Rührgerät02.png" class="mixerbild">
+              <img src="images_updated/Schritt 1/Rührschüssel.png" class="schüsselbild">
+              <img src="images_updated/Hintergrund/Teigspatel.png" class="teigspatelbild">
+              <img src="images_updated/Hintergrund/Backpapier.png" class="backpapierbild">           
+             </div>
+              <!-- Rechte Box mit Utensilienliste -->
+            <div class="box right-box">
+              <h2>Utensilien</h2>
+              <ul>
+                <li>Springform (Ø 20 cm)</li>
+                <li>Backpapier</li>
+                <li>Mixer</li>
+                <li>Teigspatel</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="stage3 vorheizen" id="stage3-start"></div>
+      <!-------------Stage 3 ----------------->
+      
+      <div class="stage3">
+        <img src="images_updated/Ofen/Ofen_an.png" alt="Ofen" class="ofen" />
+        <h1 class="ueberschrift">VERGESSE NICHT DEN <br>OFEN VORZUHEITZEN!</h1>
+        
+        <div class="erdeeree">
+          <img src="images_updated/Erdbeere/04.png" alt="Erdbeere04" class="erdbeere04" />
+        </div>
+      </div>
+      
+      <!-- --------- STAGE 4  ------------ -->
+      <div class="stage4 schritt1" id="stage4-start">
+        <h1 class="ueberschrift1">BACKEN WIR DEN TEIG</h1>
+
+        <img src="images_updated/Schritt 1/Eier2.png" alt="Eier" class="eier" />
+        <img src="images_updated/Schritt 1/Salz2.png" alt="Salz" class="salz" />
+        <img
+          src="images_updated/Schritt 1/Zucker2.png"
+          alt="Zucker"
+          class="zucker"
+        />
+
+        <img src="images_updated/Schritt 1/Mehl2.png" alt="Mehl" class="mehl" />
+        <img
+          src="images_updated/Schritt 1/Backpulver2.png"
+          alt="Backpulver"
+          class="backpulver"
+        />
+
+        <img
+          src="images_updated/Schritt 1/Rührschüssel2.png"
+          alt="Schüssel"
+          class="schuessel"
+        />
+
+        <div class="text1">
+          Wir mixen 3 Eier, eine Prise Salz und 100g Zucker zusammen.
+        </div>
+        <div class="text2">
+          Das muss alles 4 Minuten lang schaumig geschlagen werden.
+        </div>
+        <div class="text3">
+          Dann heben wir vorsichtig 100g Mehl und 1 TL Backpulver mit einem
+          Teigspatel unter den Teig.
+        </div>
+      </div>
+
+      <div class="stage4-2 schritt1">
+        <img
+          src="images_updated/Schritt 1/Kuchenform2.png"
+          alt="Kuchenform"
+          class="form-fuellen1"
+        />
+        <div class="text4">Wir füllen unsere Form mit dem Teig ...</div>
+        <img
+          src="images_updated/Schritt 1/Kuchenform_wird_befüllt2.png"
+          alt="Kuchenform"
+          class="form-fuellen2"
+        />
+        <img
+          src="images_updated/Schritt 1/Kuchenform_mit_Teig2.png"
+          alt="Kuchenform"
+          class="form-fuellen3"
+        />
+      </div>
+
+      <div class="stage4-3 schritt1">
+        <img
+          src="images_updated/Schritt 1/Timer2.png"
+          alt="Timer"
+          class="backen-zeit"
+        />
+        <div class="text5">
+          ... und lassen den Teig circa 25 Minuten backen.
+        </div>
+        <div class="text6">
+          Danach den Kuchen von der Form lösen und komplett abkühlen lassen.
+        </div>
+      </div>
+
+      <!-- -----------STAGE 5-------------------- -->
+      <div class="stage5 schritt2" id="stage5-start">
+        <!-- Ein Container für den gesamten Inhalt des Abschnitts -->
+        
+        <div class="cInnerContent">
+          <h1 class="header-section text type_center">SAHNIGE ERDBEEREN</h1>
+          <!-- Eine überschrift (h1) für den Abschnitt mit der Klasse "header-section" und den Klassen "text" und "type_center" -->
+          
+          <div class="features">
+         <!-- Ein Container für die einzelnen Features (Zutaten und Anweisungen) -->
+
+            <div class="feature spacer_bottom_double grid grid_collapsePhone">
+             <!-- Ein einzelnes Feature mit einer Leerzeile am unteren Rand und einem Grid-Layout für Mobilgeräte -->
+
+              <div class="image-container grid_span5 text text_fromLeft">
+                <!-- Ein Container für das Bild mit der Klasse "image-container" und einer Breite von 5 Grid-Spalten. Das Bild wird von links animiert dargestellt (text_fromLeft) -->
+
+                <div class="card">
+                  <!-- Eine Karte zur Darstellung des Bildes -->
+
+                  <img width="479" src="images/erdbeerwuerfel.jpg" alt="erdbeerwuerfel">
+                  <!-- Ein Bild von Erdbeerwürfeln mit einer Breite von 479 Pixeln -->
+                </div>
+              </div>
+              <div class="grid_span7 type_left">
+                <!-- Ein Abschnitt mit einer Breite von 7 Grid-Spalten und linksbündiger Ausrichtung (type_left) -->
+
+                <h2 class="heading_large text">Zuerst die Erdbeeren</h2>
+                  <!-- Eine Überschrift (h2) für den Abschnitt mit der Klasse "heading_large" und "text" -->
+
+                <p class="text">Erstmal waschen wir unsere 250g Erdbeeren, putzen sie und schneiden sie in kleine Würfel.</p>
+                <!-- Ein Absatz (p) mit Anweisungen zum Waschen, Putzen und Schneiden der Erdbeeren -->
+              </div>
+            </div>
+        
+            <div class="feature spacer_bottom_double grid grid_collapsePhone">
+              <!-- Ein einzelnes Feature mit einem doppelten Abstand am unteren Rand und einem Grid-Layout für Mobilgeräte -->
+
+              <div class="grid_span7 type_right">
+                <!-- Ein Abschnitt mit einer Breite von 7 Grid-Spalten und rechtsbündiger Ausrichtung (type_right) -->
+
+                <h2 class="heading_large text">Jetzt der Quark</h2>
+                <!-- Eine Überschrift (h2) für den Abschnitt mit der Klasse "heading_large" und "text" -->
+
+                <p class="text">Dann wird 500g Magerquark mit 70g Zucker verrührt.</p>
+                <!-- Ein Absatz (p) mit Anweisungen zum Vermengen von 500g Magerquark und 70g Zucker -->
+              </div>
+              <div class="image-container grid_span5 text text_fromRight">
+                <!-- Ein Container für das Bild mit der Klasse "image-container" und einer Breite von 5 Grid-Spalten. Das Bild wird von rechts animiert dargestellt (text_fromRight) -->
+
+                <div class="card">
+                  <!-- Eine Karte zur Darstellung des Bildes -->
+
+                  <img width="479" src="images/magerquark.jpg" alt="magerquark">
+                  <!-- Ein Bild von Magerquark mit einer Breite von 479 Pixeln -->
+
+                </div>
+              </div>
+            </div>
+        
+            <div class="feature spacer_bottom_double grid grid_collapsePhone">
+              <!-- Ein einzelnes Feature mit einem doppelten Abstand am unteren Rand und einem Grid-Layout für Mobilgeräte -->
+
+              <div class="image-container grid_span5 text text_fromLeft">
+                <!-- Ein Container für das Bild mit der Klasse "image-container" und einer Breite von 5 Grid-Spalten. Das Bild wird von links animiert dargestellt (text_fromLeft) -->
+
+                <div class="card">
+                  <!-- Eine Karte zur Darstellung des Bildes -->
+
+                  <img width="479" src="images/sahne.jpg" alt="sahne">
+                  <!-- Ein Bild von Sahne mit einer Breite von 479 Pixeln -->
+                </div>
+              </div>
+        
+              <div class="grid_span7 type_left">
+                <!-- Ein Abschnitt mit einer Breite von 7 Grid-Spalten und linksbündiger Ausrichtung (type_left) -->
+
+                <h2 class="heading_large text">Als drittes die Sahne</h2>
+                <!-- Eine Überschrift (h2) für den Abschnitt mit der Klasse "heading_large" und "text" -->
+
+                <p class="text">Wir schlagen 200g Sahne steif und rieseln gleichzeitig 2 Packungen Sahnesteif ein.</p>
+                <!-- Ein Absatz (p) mit Anweisungen zum Schlagen von 200g Sahne und Zugabe von 2 Packungen Sahnesteif -->
+              </div>
+            </div>
+            <div class="feature spacer_bottom_double grid grid_collapsePhone">
+              <!-- Ein einzelnes Feature mit einem doppelten Abstand am unteren Rand und einem Grid-Layout für Mobilgeräte -->
+
+              <div class="grid_span7 type_right">
+                <!-- Ein Abschnitt mit einer Breite von 7 Grid-Spalten und rechtsbündiger Ausrichtung (type_right) -->
+
+                <h2 class="heading_large text">Mixen</h2>
+                 <!-- Eine Überschrift (h2) für den Abschnitt mit der Klasse "heading_large" und "text" -->
+
+                <p class="text">Zum Schluss die Erdbeerwürfel und Sahne unter die Quarkmasse rühren.</p>
+                <!-- Ein Absatz (p) mit Anweisung -->
+              </div>
+        
+              <div class="image-container grid_span5 text text_fromRight">
+                <!-- Ein Container für das Bild mit der Klasse "image-container" und einer Breite von 5 Grid-Spalten. Das Bild wird von rechts animiert dargestellt (text_fromRight) -->
+
+                <div class="card">
+                  <!-- Eine Karte zur Darstellung des Bildes -->
+
+                  <img width="479" src="images/mixen.JPG" alt="mixen">
+                  <!-- Ein Bild vom Mixen mit einer Breite von 479 Pixeln -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="puffer"></div>
+
+        <div class="stage6 schritt3" id="stage6-start"></div>
+
+                <!---Stage6 --->
+
+        <div class="CakeLayers">
+
+          <!-- Überschrift des Schrittes -->
+          <h1 class="schritt4Title">DOPPELDECKER BERRYLICIOUS</h1>
+
+          <!-- Einzelne Schrittbeschreibungen-->
+          <p class="left schritt4_1"> Wir halbieren unseren Teig waagerecht </p>
+
+          <p class="right schritt4_2">Die untere Hälfte geben wir auf eine Tortenplatte und einen Tortenring eng
+            herumstellen</p>
+
+          <p class="left schritt4_3">Unsere Quark-Sahne geben wir auf den Teigboden und streichen sie glatt</p>
+
+          <p class="right schritt4_4">Den zweiten Boden legen wir obendrauf und verteilen die restliche Creme</p>
+
+          <p class="left schritt4_5">Jetzt muss unser Kuchen erstmal mindestens 1 Stunde kühl gestellt werden.</p>
+
+          <p class="right schritt4_6">Für die Deko kann man am Schluss den Kuchen mit den restlichen Erdbeeren und
+            Pistazien verzieren.</p>
+
+
+          <!-- Einbindung der einzelnen Kuchenschichten zum Animieren -->
+
+          <div class="layers">
+            <img src="images_updated/Schichten/Erdbeeren_ohne_Hintergrund.png" class="topping" alt="Kuchenfullung">
+            <img src="images_updated/Schichten/Sahne.png" class="filling2" alt="Kuchenfullung">
+            <img src="images_updated/Schichten/Kuchen_Boden.png" class="bottom1" alt="Kuchenboden">
+            <img src="images_updated/Schichten/Kuchen_Füllung.png" class="filling1" alt="Kuchenfullung">
+            <img src="images_updated/Schichten/Kuchen_Boden.png" class="bottom2" alt="Kuchenboden">
+
+          </div>
+
+        </div>
+        <!--------------ENDE Stage6 ----------------->
+        <!--------------ENDE----------------->
+        <div class="ende">
+          <img src="images_updated/Erdbeere/03.png" alt="Erdbeere" class="endbeere">
+          <p class="endtext">
+            Super gemacht! <br>
+            Dein Kuchen ist fertig! <br>
+            Guten Appetit!<br>
+          </p>
+        </div>
+
+    </main>
+    <footer></footer>
+
+
+    <!-- ScrollTrigger-Library einbinden -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <script src="./index.js"></script>
+    
+  </body>
+</html>

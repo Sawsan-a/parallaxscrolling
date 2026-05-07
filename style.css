@@ -1,0 +1,895 @@
+/* Google Font importieren */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+
+* {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Comic Neue', cursive;
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cae6ff;
+}
+
+
+/* --------------- Navbar -------------------------- */
+nav{
+    width: 100%;
+    padding: 0.7rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;        /* Anordnung VOR (in z-Richtung) den anderen Elementen*/
+}
+
+/* äußerer Container mit menu-icon */
+.menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;                /* Elemente werden vertikal mittig ausgerichtet */
+    justify-content: space-between;
+    margin: auto 1rem;
+}
+
+
+/* Checkbox macht das menu-icon anklickbar */
+.nav_checkbox {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0;         /* unsichtbar */
+    z-index: 11;
+}
+
+.menu .icon {
+    display:block;      /* damit die darin enthaltenen Striche (3x span), untereinander angeordnet sind*/
+}
+
+
+/* Erstellen des menu-icons (3 Striche) */
+.menu .icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: black;
+    border-radius: 3px;
+    z-index: 10;
+    position: relative;
+    transform-origin: 4px 0px;      /* Ankerpunktunkt, um den Transformationen angewendet werden */
+    transition: 0.5s ease;
+    right: -17px
+}
+
+/* innerer Container mit den Elementen, die zunächst nicht angezeigt werden */
+.nav_toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;                /* Elemente werden vertikal mittig ausgerichtet */
+    justify-content: space-between;
+    transition: 0.5s ease;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.3s ease;     /* schönerer Übergang beim Ein-/Ausblenden */
+}
+
+/* Logo */
+.bb-logo {
+    display: flex;
+    align-items: center;
+}
+.bb-logo .logo-image {
+    height: 3rem;
+
+    margin-right: 3px;
+}
+.bb-logo .logo-text {
+    font-family: 'Chewy', cursive;
+    color: lightpink;
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+    text-shadow: rgba(161, 83, 94, 0.685) 1px 1px;
+}
+/* ---------- */
+
+
+.search-bar {
+    background-color: #cae6ff;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    transform: translateX(50px);
+    box-shadow: 2px 5px 3px #0168c246;
+}
+
+.search-bar input[type="search"] {
+    background: transparent;
+    width: 25vw;
+    max-width: 400px;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    color: hsl(252, 30%, 17%);
+
+    outline: none;
+    border: none;
+
+}
+
+/* Rahmen für die Positionierung des Such-Icons*/
+.search-bar .search-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.4rem;
+    margin-left: 0.6rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+}
+
+/* Erstellung des Such-Icons*/
+.search-bar .search-icon::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #000000a4;
+    border-radius: 50%;
+    transform: translate(-4px,-4px);
+    border-width: 0.15rem;
+}
+.search-bar .search-icon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: #000000a4;
+    transform: translate(5px,5px) rotate(315deg);
+
+}
+/* ---------- */
+
+/* Aktionen, wenn das menu-icon angeklickt wird */
+.nav_checkbox:checked ~ nav .menu .icon span {
+    background-color: #383a3b;
+}
+
+.nav_checkbox:checked ~ nav .menu .icon span:nth-child(1) {
+    transform: rotate(45deg) scale(0.7, 0.7) translate(10px, 5px);
+}
+
+.nav_checkbox:checked ~ nav .menu .icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav_checkbox:checked ~ nav .menu .icon span:nth-child(3) {
+    transform: rotate(-45deg) scale(0.7, 0.7);
+}
+
+.nav_checkbox:checked ~  nav .menu .nav_toggle {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav_checkbox:checked ~ nav {
+    background-color: #ffffff;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+/* ---------- */
+
+/* Drop-Down-Menu */
+.nav_toggle ul li {
+  list-style: none;
+  display: block;
+  position: relative; /* damit sich Drop-Down relativ zu dem zugehörigen li Element positioniert */
+  right: 10%;
+}
+
+.nav_toggle ul li a {
+  text-decoration: none;
+  padding: 10px 5px 0px 5px;
+  margin-right: 10px;
+  display: block;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.nav_toggle ul li a:hover {
+  /* background-color: #f0efef; */
+  background-color: #cae6ff57;
+  border-radius: 10px;
+}
+
+.nav_toggle ul li ul {
+  display: block;
+  position: absolute;
+  left: -50%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: none;          /* Drop-Down wird normal nicht angezeigt */
+}
+
+.nav_toggle ul li ul li { 
+  padding: 10px 0px 5px 40px;
+  text-align: center;
+}
+
+.nav_toggle ul li:hover ul {  
+  display: block;               /* beim hovern über oberes li-Element wird Drop-Down-Teil dargestellt */
+}
+
+ul li a .pfeil_runter {
+  position: absolute;
+  height: 30px;
+  left: -25px;
+  opacity: 0.6;
+}
+
+
+/* ------------ Ende Navbar ---------------- */
+html, body {
+  min-width: 100%;
+}
+
+/* ---------------- STAGE 1 --------------- */
+
+main .stage1 {
+    position: relative;
+    display: flex;/*Das Element wird als Flex-Container angezeigt.*/
+    justify-content: center;/*Der Inhalt ist horizontal zentriert innerhalb des Elements.*/
+    align-items: center;/*Der Inhalt ist vertikal zentriert innerhalb des Elements.*/
+    height: 100vh;
+    width: 100vw;
+}
+
+.stage1 .bb-title {
+    position: absolute;
+    width: 60%;/*Die Breite des Elements beträgt 60%*/
+    min-width: 420px;/*Die minimale Breite des Elements beträgt 420 Pixel.*/
+    top: 2%;
+    align-items: center;
+    justify-content: center;
+    display: flex;/*Das Element wird als Flex-Container angezeigt*/
+    background-color: #75aee046;
+    padding: 4px;/*Der Abstand um den Inhalt des Elements beträgt 4 Pixel.*/
+    box-shadow: 2px 4px 3px #0168c246;
+    border-radius: 100%;/*Der Randradius des Elements beträgt 100%.*/
+  }
+
+.stage1 .bb-title .start-logo {
+    width: 65px;
+}
+
+.stage1 .bb-title .logo-text {
+    font-family: 'Chewy', cursive;
+    color: lightpink;
+    font-size: 3rem;/*Die Schriftgröße des Textes beträgt 3rem*/
+    letter-spacing: 0.4rem;/*Der Abstand zwischen den Buchstaben des Textes beträgt 0,4rem.*/
+    text-shadow: rgba(161, 83, 94, 0.685) 3px 3px;  
+}
+
+.stage1 .einleitung {
+    position: absolute;
+    top: 2%;/*Das Element ist um 2% vom oberen Rand seines Elternelements positioniert.*/
+}
+
+.stage1 .rezept-titel {
+    position: absolute;
+    width: 100%;
+    top: 130px;/*Das Element ist um 130px vom oberen Rand seines Elternelements positioniert.*/  
+    /* left: 15%; */
+    font-size: 3em;
+    text-align: center;
+}
+/*Angaben für rezepttittel */
+.center {
+  display: flex;
+  align-items: center;/*Der Inhalt wird vertikal zentriert innerhalb des Elements.*/
+  justify-content: center;/*Der Inhalt wird horizontal zentriert innerhalb des Elements.*/
+}
+/* angaben für das EinleitungsBild*/
+.cake-start {
+  position: relative;
+  width: 60%;
+  max-width: 1400px;
+  margin-top: 200px;
+  border-radius: 12px;
+}
+
+/*Css variables für text color und size*/
+:root {
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --text-size: 24px;
+}
+/**/
+.einleitungs-text {
+  position: absolute;
+  opacity: 1;
+  font-size: var(--text-size);/*The font size of the text is set to the value of the --text-size variable.*/
+  text-align: left;
+  max-width: 70%;
+  color: var(--secondary-color);/*The font size of the text is set to the value of the --text-size variable.*/
+  margin-top: 20px;
+  right: 10%;/*Das Element ist um 10% vom rechten Rand seines Elternelements positioniert..*/
+  /*  position: absolute;
+  opacity: 1;
+  text-align: left;
+  max-width: 70%;
+  color: var(--secondary-color);
+  margin-top: 25px;
+  right: 1%;
+  font-size: 2em;
+
+  */
+}
+
+
+/*position und größe von die Erdbeere neben den EinleitungsText*/
+.erdbeere {
+  width: 150px;
+  position: absolute;
+  left: 20%;/*Das Element ist Um 20% vom  linke seines Elternelements positioniert.*/
+  /*  width: 150px;
+  position: absolute;
+  left: 6%;
+*/
+}
+
+
+/* ------------ Ende STAGE 1 ---------------- */
+
+.puffer {
+  height: 50vh;
+}
+
+/* ---------------- STAGE 2 --------------- */
+/* Positionierung der Container */
+.container {
+  position: relative;
+  height: 200vh;
+}
+
+/* Positionierung des Titels */
+.title {
+  font-family: 'Comic Neue', cursive;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%); /* horizontal zentriert*/
+  font-size: 3em;
+}
+
+/* Die ungeordnete Liste erhält keine Aufzählungspunkte */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/*  Styling der einzelnen Listenelemente */
+li{
+  font-family: 'Comic Neue', cursive;
+  margin-bottom: 10px;
+}
+
+/* Positionierung der Box-Container */
+.box-container {
+  display: flex;
+  justify-content: center; /* enthaltenen Elemente werden horizontal zentriert */
+  align-items: flex-start; /* Elemente werden am Anfang der Box vertikal ausgerichtet */
+  padding-top: 100px;
+}
+
+/*  Styling der Boxen */
+.box {
+  width: 300px;
+  height: 400px;
+  background-color: #f5f5f5;
+  margin: 80px;
+  padding: 30px;
+  opacity: 0; /* auf unsichtbar gesetzt*/
+  border-radius: 15px;
+}
+/* Styling der Überschriften innerhalb der Boxen */
+.box h2 {
+  font-family: 'Comic Neue', cursive;
+  text-align: center; 
+}
+
+ /* Zutaten Icons */
+.image-box img {
+  margin-right: 7px; 
+  height: 7rem; 
+  position: absolute;
+}
+
+/* Positionierung der einzelnen Zutaten Icons */
+.mehlbild {
+  top: 28%;
+  left: 45%;
+}
+
+.eibild {
+  top: 15%;
+  left: 1%;
+}
+
+.zuckerbild{
+  top: 40%;
+  left:6%;
+}
+
+.salzbild{
+  top: 25%;
+  left:10%;
+}
+
+.quarkbild{
+  top:44%;
+  left: 24%;
+}
+
+.sahnebild{
+  top:42%;
+  right: 45%;
+}
+
+.erdbeerenbild.left{
+  top:2%;
+  left:22%;
+}
+
+.erdbeerenbild.right{
+  top:2%;
+  right:22%;
+}
+
+/* Utensilien Icons */
+.utensilien-image img{
+  margin-right: 5px; 
+  height: 5rem; 
+  position: absolute;
+}
+
+/* Positionierung der einzelnen Utensilien Icons */
+.springformbild{
+  top:41%;
+  right: 25%;
+}
+
+.mixerbild{
+  top: 25%;
+  right:13%;
+}
+
+.schüsselbild{
+  top: 38%;
+  right:5%;
+}
+
+.backpapierbild{
+  top: 15%;
+  right: 1%;
+}
+
+.teigspatelbild{
+  top: 15%;
+}
+
+/* ------------ Ende STAGE 2 ---------------- */
+
+
+/* ---------------- STAGE 3 --------------- */
+.stage3{
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  margin: 0;
+}
+
+.ofen{
+  position: fixed;
+  bottom: 0;
+  left: 65%;
+  transform: translate(-50%, 100%);
+  z-index: 2;
+  transition: transform 0.5s;
+}
+
+.ueberschrift{
+  font-family: 'Comic Neue', cursive;
+  position: absolute;
+  top: 50px;
+  left: 68%;
+  transform: translateX(-50%);
+  font-size: 2.5em;
+}
+
+.erdbeere04{
+  position: relative;
+  max-width: 320px;
+  height: auto;
+  left: 8%;
+  top: 175px;
+}
+
+/* ------------ Ende STAGE 3 ---------------- */
+
+
+/* ---------------- STAGE 4 --------------- */
+.stage4, .stage4-2, .stage4-3 {
+  position: relative; /* Add position relative to establish containing block */
+  height: 100vh;      /* 1 Abschnitt einer Stage nimmt die volle Viewport-Höhe ein */
+  width: 100vw;       /* 1 Abschnitt einer Stage nimmt die volle Viewport-Breite ein */
+  padding-top: 5%;
+  z-index: 2;
+}
+
+.stage4 .ueberschrift1 {
+  position: absolute;
+  left: -510px;         /* Überschrift zunächst links außerhalb des Viewports */
+  top: 5vh;
+  font-size: 3em;
+}
+
+.stage4 .eier {
+  width: 100px;
+  position: absolute;
+  opacity: 0;
+}
+
+
+.stage4 .salz {
+  width: 100px;
+  position: absolute;
+  opacity: 0;
+}
+
+.stage4 .zucker {
+  width: 100px;
+  opacity: 0;
+  position: absolute;
+}
+
+.stage4 .mehl {
+  width: 100px;
+  opacity: 0;
+  position: absolute;
+}
+
+.stage4 .backpulver {
+  width: 100px;
+  opacity: 0;
+  position: absolute;
+}
+
+.stage4 .schuessel {
+  width: 450px;
+  position: absolute;
+  bottom: 8vh; 
+  left: 35vw;
+}
+
+.text1, .text2, .text3 {
+  position: absolute;
+  width: 25vw;
+  background-color:#ffffff;
+  padding: 4px;
+  border: solid 2px lightpink;
+  border-radius: 1rem;
+  bottom: 10vh;
+  right: 5vw;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+
+.stage4-2 .form-fuellen1 {
+  width: 500px;
+  position: absolute;
+  left: -500px;
+  top: -500px;
+  opacity: 0;
+}
+.stage4-2 .form-fuellen2 {
+  width: 650px;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  opacity: 0;
+}
+.stage4-2 .form-fuellen3 {
+  width: 500px;
+  position: absolute;
+  left: 200px;
+  top: 375px;
+  opacity: 0;
+}
+
+.text4 {
+  position: absolute;
+  width: 35vw;
+  background-color:#ffffff;
+  padding: 20px;
+  border: solid 2px lightpink;
+  border-radius: 1rem;
+  right: 7vw;
+  bottom: -150px;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+/*  part3 */
+.stage4-3 .backen-zeit {
+  width: 400px;
+  position: absolute;
+  left: -400px;
+  top: 20%;
+  opacity: 0;
+}
+
+.text5 {
+  position: absolute;
+  width: 35vw;
+  background-color:#ffffff;
+  padding: 20px;
+  border: solid 2px lightpink;
+  border-radius: 1rem;
+  right: 10vw;
+  bottom: -150px;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.text6 {
+  position: absolute;
+  width: 35vw;
+  background-color:#ffffff;
+  padding: 20px;
+  border: solid 2px lightpink;
+  border-radius: 1rem;
+  right: 10vw;
+  bottom: -150px;
+  font-size: 1.5rem;
+}
+
+/* ------------ Ende STAGE 4 ---------------- */
+
+
+/* ---------------- STAGE 5 --------------- */
+
+body {
+  font-weight: 300; /* Setzt das Schriftgewicht des Body-Tags auf 300 */
+}
+.type_right {
+  text-align: right; /* Text wird rechtsbündig ausgerichtet */
+}
+.type_center {
+  text-align: center; /* Text wird zentriert ausgerichtet */
+  font-size: 3em; /* Setzt die Schriftgröße auf 3em */
+}
+.cInnerContent {
+  max-width: 1240px; /* Setzt die maximale Breite auf 1240px */
+  margin-left: auto; /* Zentriert das Element horizontal durch das automatische Hinzufügen eines linken Rands */
+  margin-right: auto; /* Zentriert das Element horizontal durch das automatische Hinzufügen eines rechten Rands */
+}
+.spacer_bottom_double {
+  margin-bottom: 30px; /* Fügt einen doppelten Leerraum (30px) am unteren Rand des Elements hinzu */
+}
+.grid {
+  display: inline-block; /* Das Element wird als Inline-Block angezeigt */
+  display: -ms-flexbox; /* Flexbox-Layout für den Internet Explorer */
+  display: flex; /* Flexbox-Layout */
+  flex-wrap: wrap; /* Die Elemente werden in eine neue Zeile gewickelt, wenn sie nicht mehr in einer Zeile angezeigt werden können */
+}
+.grid::before, .grid::after {
+  display: table; /* Elemente vor und nach der Grid-Klasse werden als Tabelle angezeigt */
+  content: ""; /* Leerzeicheninhalt für die vorherige und nachfolgende Pseudo-Elemente */
+  line-height: 0;  /* Der Zeilenabstand der Pseudo-Elemente wird auf 0 gesetzt */
+}
+.grid > [class*="grid_span"] {
+  display: block; /* Die Elemente innerhalb der Grid-Klasse werden als Blockelemente angezeigt */
+  width: 100%; /* Die Elemente haben eine Breite von 100% */
+  min-height: 30px; /* Die minimale Höhe der Elemente beträgt 30px */
+  box-sizing: border-box; /* Das Box-Modell wird auf Border-Box gesetzt */
+}
+.grid > .grid_span5 {
+  width: 40.42553191489362%; /* Die Elemente mit der Klasse grid_span5 haben eine Breite von 40% */
+}
+.grid > .grid_span7 {
+  width: 57.44680851063829%; /* Die Elemente mit der Klasse grid_span7 haben eine Breite von 57% */
+}
+.grid > [class*="grid_span"] {
+  float: left; /* Die Elemente werden linksbündig angeordnet */
+  margin-left: 2%; /* Ein 2%iger linker Außenabstand wird hinzugefügt */
+}
+.grid > [class*="grid_span"]:first-child {
+  margin-left: 0; /* Der linke Außenabstand des ersten Elements in der Grid-Klasse wird auf 0 gesetzt */
+}
+.feature {
+  display: flex; /* Das Feature-Element wird als Flexbox-Container angezeigt */
+  align-items: center; /* Die Elemente innerhalb des Feature-Elements werden vertikal zentriert ausgerichtet */
+}
+.card {
+  margin-bottom: 30px; /* Fügt einen Abstand von 30px am unteren Rand des Karten-Elements hinzu */
+  border: 2px solid lightpink; /* Setzt eine 2px breite Kante mit der Farbe lightpink */
+  border-radius: 8px; /* Setzt einen Randradius von 8px */
+  overflow: hidden; /* Verbirgt den Inhalt, der über den Rahmen hinausragt */
+  background: #ffffff; /* Setzt den Hintergrund auf Weiß */
+}
+
+.image-container .card {
+  padding: 10px; /* Fügt 10px Innenabstand zur Kartenklasse in einem Bildcontainer hinzu */
+  height: 0; /* Setzt die Höhe auf 0 */
+  padding-bottom: calc(100% - 10px); /* Berechnet die Höhe des Karteninhalts basierend auf dem Inhalt des Containers */
+}
+h2.heading_large {
+  font-size: 3em; /* Setzt die Schriftgröße auf 3em für h2-Elemente mit der Klasse heading_large */
+}
+img {
+  max-width: 100%; /* Begrenzt die maximale Breite des Bildes auf 100% */
+}
+h1.text {
+  font-size: 5em; /* Setzt die Schriftgröße auf 5em für h1-Elemente mit der Klasse text */
+}
+.header-section {
+  margin: 400px auto; /* Setzt einen oberen und unteren Rand von 400px und einen horizontalen Abstand automatisch auf auto */
+}
+  
+.text {
+  opacity: 0; /* Setzt die Transparenz auf 0 */
+  visibility: hidden;  /* Setzt die Sichtbarkeit auf versteckt */
+  will-change: transform, opacity; /* Gibt an, dass die Eigenschaften "transform" und "opacity" voraussichtlich geändert werden */
+  font-size: 1.5em; /* Setzt die Schriftgröße auf 1.5em */
+}
+/* ------------ Ende STAGE 5 ---------------- */
+
+
+/* ---------------- STAGE 6 --------------- */
+
+.CakeLayers {
+  padding-bottom: 30vh;
+}
+
+/* Positionierung und styling der Überschrift*/
+.schritt4Title{
+  padding: 5%;
+  text-align:center;
+  font-size: 3em;
+}
+
+/* Positionierung der Kuchenschichten*/
+
+.layers {
+  position: relative;
+  padding: 10px;
+  width: 60%;
+  left: 20%;
+  margin-top: 20%;
+}
+
+
+.topping {
+  z-index: 6;
+  position: absolute;
+  left: 4%;
+  
+}
+
+ .filling1 {
+  z-index: 2;
+  left:4%;
+  position: absolute;
+  top:270%;
+ }
+
+
+.filling2 {
+  z-index: 5;
+  left: 4%;
+  position: absolute;
+}
+
+.bottom1 {
+ z-index: 1;
+ left: 4%;
+ position: absolute;
+ top: 370%;
+}
+
+.bottom2 {
+  z-index: 3;
+  left:4%;
+  position: absolute;
+  top:160%;
+}
+
+ /* styling der Textabschnitte*/
+.CakeLayers p{
+  position:absolute;
+  margin-top: 5%;
+  border: solid 2px lightpink;
+  background-color: white;
+  border-radius: 1rem;
+  text-align: center;
+  width:25vw;
+  font-size: 1.3em;
+}
+
+
+/* Positionierung der Textabschnitte*/
+
+ .schritt4_1{
+  top: 50%;
+  left:5%;
+ }
+
+ .schritt4_2{
+  top: 60%;
+  left: 70%;
+ }
+
+ .schritt4_3{
+  top: 80%;
+  left:5%;
+ }
+
+ .schritt4_4{
+  top: 100%;
+  left: 70%;
+ }
+
+ .schritt4_5{
+  top: 110%;
+  left:5%;
+ }
+
+ .schritt4_6{
+  top: 130%;
+  left: 70%;
+ }
+
+
+
+/* ------------ Ende STAGE 6 ---------------- */
+
+.ende{
+position: relative;
+margin-top: 35%;
+}
+
+/*Styling des Textes und Positionierung der Startposition*/
+.endtext {
+position: absolute;
+border: solid 4px lightcoral;
+background-color: white;
+border-radius: 2em;
+font-size: 2em ;
+font-style: italic;
+font-weight: bold;
+text-align: center;
+width: 45%;
+opacity: 0;
+}
+
+/*Positionierung der Erdeere*/
+.endbeere {
+width: 30%;
+position: absolute;
+right: 10%;
+}
+
+
